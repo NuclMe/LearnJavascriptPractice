@@ -1,23 +1,23 @@
 // push - пушит в конец массива инфу.
 // Возвращает новую длинну массива
 
-let arr = ["I", "go", "home"];
+let arr = ['I', 'go', 'home']
 // console.log(arr.length); // 3
-arr.push("to Wakanda");
+arr.push('to Wakanda')
 // console.log(arr.length); // 4
-let newArr = ["ololo"];
+let newArr = ['ololo']
 
-let arrobj = [{ id: 1 }, { id: 2 }];
-let arrsnumbers = [3, 5, 6];
-arrsnumbers.push(7);
-arrobj.push({ id: 3 });
+let arrobj = [{ id: 1 }, { id: 2 }]
+let arrsnumbers = [3, 5, 6]
+arrsnumbers.push(7)
+arrobj.push({ id: 3 })
 // console.log(arrobj);
 // console.log(arrsnumbers);
 // PUSH END
 
 // pop - извлекает из конца массива инфу
 // возвращает последний елемент массива или undefined если массив пустой. Изменяет длинну массива и сам массив
-let stringArr = ["my", " name", "is", "Serg"];
+let stringArr = ['my', ' name', 'is', 'Serg']
 // console.log(stringArr, stringArr.length); // 4
 // console.log(stringArr.pop()); // Serg
 // console.log(stringArr, stringArr.length); // 3
@@ -26,21 +26,21 @@ let stringArr = ["my", " name", "is", "Serg"];
 
 // shift извлекает первый елемент массива и возвращает этот елемент.Изменяет длинну массива и сам массив
 
-let arrayOfStrings = ["today", "i am", "working"];
+let arrayOfStrings = ['today', 'i am', 'working']
 // console.log(arrayOfStrings);
 // console.log(arrayOfStrings.shift());
 // console.log(arrayOfStrings);
 
 // unshift добавляет елемент в начало массива и возвращает новую длинну массива
-const shiftarr = [4, 5, 6];
-shiftarr.unshift(3);
+const shiftarr = [4, 5, 6]
+shiftarr.unshift(3)
 // console.log(shiftarr);
 
 // Массивы - это те же обьекты
 // delete удаляет елементы . Внимание, длинна массива не поменяется, потому что он удаляет значение КЛЮЧА,сам ключ как и был undefined так он и останется
 
-let deletearr = ["hello", "dear", "friend"];
-delete deletearr[0];
+let deletearr = ['hello', 'dear', 'friend']
+delete deletearr[0]
 // console.log(deletearr[0]);
 // console.log(deletearr);
 
@@ -51,20 +51,20 @@ delete deletearr[0];
 // splice(start,deleteCount) deleteCount - количество елементов которые нужно убрать со страта
 // splice (start,deleteCount,item1) item - елементы которые нужно добавить в массив начиная со start
 
-let spliceArr = [1, 2, 3];
+let spliceArr = [1, 2, 3]
 
-let ololo = spliceArr.splice(0, 2);
+let ololo = spliceArr.splice(0, 2)
 
 // console.log(ololo); // 1,2
 
-let newSpliceArr = ["hello dear friend", "don`t delete me", "please"];
+let newSpliceArr = ['hello dear friend', 'don`t delete me', 'please']
 
 // let newololo = newSpliceArr.splice(1, 1, "слыш", "не удаляй");
 // удалить с первого по первый елемент и добавить слыш, не удаляй
-let superololo = newSpliceArr.splice(9, 0, "bambaleila");
+let superololo = newSpliceArr.splice(9, 0, 'bambaleila')
 // console.log(newSpliceArr);
 
-let myFish = ["angel", "clown", "mandarin", "sturgeon"];
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
 // let removed = myFish.splice(1, 0, "drum");
 // let removed = myFish.splice(2, 0, "drum", "guitar");
 // let removed = myFish.splice(3,1)
@@ -79,13 +79,13 @@ let myFish = ["angel", "clown", "mandarin", "sturgeon"];
 
 // slice - копирует елменты от и до(не включая до). Возвращает новый массив с указанными парметрами
 // Синтаксис slice([start],[end]) start и end - два индекса
-let arrchka = ["t", "e", "s", "t"];
+let arrchka = ['t', 'e', 's', 't']
 // console.log(arrchka.slice(0, 2));
 // ----- ЕСЛИ СДЕЛАТЬ ПРОСТО ПУСТОЙ slice() - значит мы просто делаем копию массива
 
 // concat - соеденяет массивы, возвращает новый массив
-let concatArr = [4, 5, 6, 7];
-let anotherConcat = ["heoi"];
+let concatArr = [4, 5, 6, 7]
+let anotherConcat = ['heoi']
 
 // console.log(concatArr.concat(anotherConcat));
 
@@ -101,7 +101,7 @@ let anotherConcat = ["heoi"];
 //     //your iterator
 // }[, thisArg]);
 
-const array1 = ["a", "b", "c"];
+const array1 = ['a', 'b', 'c']
 
 // array1.forEach(element => console.log(element));
 
@@ -115,12 +115,12 @@ const array1 = ["a", "b", "c"];
 // lastIndexOf - вернет последний раз когда елемент был найден в массиве(индес елемента).
 // Синтаксис lastIndexOf(item, index) index - необязательный параметр
 
-const animals = ["Dodo", "Tiger", "Penguin", "Dodo"];
+const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo']
 // console.log(animals.lastIndexOf("Dodo"));
 
 // includes - ищет  item начиная с индекса from если найдет - вернет true
 
-let inclarr = [1, 2, 3];
+let inclarr = [1, 2, 3]
 // console.log(inclarr.includes(2, 0));
 
 // find - находит елемент с определенным условием. Если найдет искомый елемент - вернет его, если нет - undefined
@@ -133,27 +133,20 @@ let inclarr = [1, 2, 3];
 // })
 
 let users = [
-  { id: 1, name: "Вася" },
-  { id: 2, name: "Петя" },
-  { id: 3, name: "Маша" },
-];
+  { id: 1, name: 'Вася' },
+  { id: 2, name: 'Петя' },
+  { id: 3, name: 'Маша' },
+]
 
-let user = users.find((item) => item.id == 1);
+let user = users.find((item) => item.id == 1)
 
 // filter - ищет елемент по определенным парметрам  . Вернет новый массив  с елементами или елементом который true(удовлетворил условиям проверки) в результатте своего выполнения. Если не найдет елемент, то вернет пустой массив
 // синтаксис
 // filter(function callbackFn(element, index, array){ ... })
 
-const words = [
-  "spray",
-  "limit",
-  "elite",
-  "exuberant",
-  "destruction",
-  "present",
-];
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
 
-const res = words.filter((word) => word.length > 6);
+const res = words.filter((word) => word.length > 6)
 // console.log(res);
 
 // Преобразующие методы массива
@@ -161,16 +154,16 @@ const res = words.filter((word) => word.length > 6);
 // MAP - вызывает функцию на каждый елемент массива и возвращает массив результатов выполнения этой функции
 let result = arr.map(function (item, index, array) {
   // возвращается новое значение вместо элемента
-});
+})
 // const array12 = [1, 4, 9, 16];
 // const map1 = array12.map((x) => x * 2);
 // console.log(map1);
 
-const array12 = [1, 4, 9, 16];
+const array12 = [1, 4, 9, 16]
 
 const map2 = array12.map(function (item, index, array) {
-  return index;
-});
+  return index
+})
 
 // console.log(map2);
 
@@ -184,32 +177,32 @@ If compareFunction(a, b) returns 0, a and b are considered equal.
 
 */
 
-let arrSort = [1, 2, 15];
-let newArrSort = arrSort;
-newArrSort.sort();
+let arrSort = [1, 2, 15]
+let newArrSort = arrSort
+newArrSort.sort()
 
-console.log(arrSort); // 1, 15, 2ё
-console.log(newArrSort); // 1, 15, 2ё
+console.log(arrSort) // 1, 15, 2ё
+console.log(newArrSort) // 1, 15, 2ё
 
 // reverse  Переворачивает массив, первый елемент становится последним и тд . Вернет перевернутый массив. Но это будет старый массив, мы просто его изменили
 
-let arrReverse = [1, 2, 3];
-let revvar = arrReverse.reverse();
+let arrReverse = [1, 2, 3]
+let revvar = arrReverse.reverse()
 
 // split разделяет по определенному парметру строку и преобразует ее в массив. Можно еще поставить 2 аргумент - количество символов которые максимум надо перебрать
-let names = "Вася, Петя, Маша";
+let names = 'Вася, Петя, Маша'
 
-let splitArr = names.split(",", 2);
+let splitArr = names.split(',', 2)
 // console.log(splitArr);
 
 // Вызов split(s) с пустым аргументом s разбил бы строку на массив букв:
 
 // join делает то же самое только разбивает массив на строки. в аргументы мы передаем елемент который надо вставить как разделитель между словами в строке
 
-let namesArr = ["masha", "dasha"];
-namesArr.join(";");
+let namesArr = ['masha', 'dasha']
+namesArr.join(';')
 
-// reduce - вычисление единого значения массива. На каждой итерации запоминает значение и просто на следующей его плюсует. Возвращает аккумклятор свой
+// reduce - вычисление единого значения массива. На каждой итерации запоминает значение и просто на следующей его плюсует. Возвращает свой аккумулятор
 // синтаксис  array.reduce(callback[, initialValue])
 
 //  callback  - Функция, выполняющаяся для каждого элемента массива, принимает четыре аргумента:
@@ -229,19 +222,19 @@ namesArr.join(";");
 
 // console.log(reducer.reduce(reducer));
 
-let arr4 = [1, 2, 3, 4, 5];
+let arr4 = [1, 2, 3, 4, 5]
 
-let results = arr4.reduce((sum, current) => sum + current, 0);
+let results = arr4.reduce((sum, current) => sum + current, 0)
 // console.log(results);
 
-let superReducer = arr4.reduce((sum, current) => sum * current, 0);
+let superReducer = arr4.reduce((sum, current) => sum * current, 0)
 // https://learn.javascript.ru/array-methods#reduce-reduceright
 
 // reduce right - работает так же но проходится справа налево
 
 // Array.isArray проверяет что массив это массив
 // массивы это обьекты поэтому если сжелать вот твк:
-let obja = {};
+let obja = {}
 // console.log(typeof arr); // object
 // console.log(typeof obja); // object
 
@@ -258,14 +251,14 @@ let army = {
   minAge: 18,
   maxAge: 27,
   canJoin(user) {
-    return user.age >= this.minAge && user.age < this.maxAge;
+    return user.age >= this.minAge && user.age < this.maxAge
   },
-};
+}
 
-let userss = [{ age: 16 }, { age: 20 }, { age: 23 }, { age: 30 }];
+let userss = [{ age: 16 }, { age: 20 }, { age: 23 }, { age: 30 }]
 
 // найти пользователей, для которых army.canJoin возвращает true
-let soldiers = userss.filter(army.canJoin, army);
+let soldiers = userss.filter(army.canJoin, army)
 // console.log(soldiers.length);
 // console.log(soldiers);
 

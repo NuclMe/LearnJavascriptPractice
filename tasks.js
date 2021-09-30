@@ -1,91 +1,91 @@
 function findElem() {
-  let border = "list-style-imAge";
+  let border = 'list-style-imAge'
   let res = border
-    .split("-")
+    .split('-')
     .map(function (item, index) {
       if (index === 0) {
-        return item;
+        return item
       } else {
-        return item[0].toUpperCase() + item.slice(1).toLowerCase();
+        return item[0].toUpperCase() + item.slice(1).toLowerCase()
       }
     })
-    .join("");
+    .join('')
 
   //   console.log(res);
 }
-findElem();
+findElem()
 
 /*
 Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
 Функция должна возвращать новый массив и не изменять исходный.
 */
 // sort, reverse и splice - не использвать в этой задаче
-let arr5 = [0, 1, 2, 3, 4, 5];
+let arr5 = [0, 1, 2, 3, 4, 5]
 function filterRange(arr5, a, b) {
-  return arr5.filter((item) => item >= a && item <= b);
+  return arr5.filter((item) => item >= a && item <= b)
 }
 
-filterRange(arr5, 1, 5);
+filterRange(arr5, 1, 5)
 
 /*
 Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
 Функция должна изменять принимаемый массив и ничего не возвращать.
 */
-let arr = [0, 1, 2, 3, 4, 5];
+let arr = [0, 1, 2, 3, 4, 5]
 function filterRangeInPlace(arr, a, b) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] >= a && arr[i] >= b) {
-      arr.splice(i, 1);
-      i--;
+      arr.splice(i, 1)
+      i--
     }
   }
   // console.log(arr);
 }
 
-filterRangeInPlace(arr, 1, 4);
+filterRangeInPlace(arr, 1, 4)
 
-let arr2 = [5, 2, 1, -10, 8];
+let arr2 = [5, 2, 1, -10, 8]
 
-arr.sort((a, b) => b - a);
+arr.sort((a, b) => b - a)
 // arr2.sort().reverse(); это мой рабочий способ
 // console.log(arr2);
 
-let arr3 = ["HTML", "JavaScript", "CSS"];
+let arr3 = ['HTML', 'JavaScript', 'CSS']
 
 function copyArr(arr3) {
-  return arr3.slice().sort();
+  return arr3.slice().sort()
 }
 
-let sorted = copyArr(arr3);
+let sorted = copyArr(arr3)
 // console.log(arr3);
 // console.log(sorted);
 
 function Calculator() {
   this.methods = {
-    "-": (a, b) => a - b,
-    "+": (a, b) => a + b,
-  };
+    '-': (a, b) => a - b,
+    '+': (a, b) => a + b,
+  }
 
   this.calculate = function (str) {
-    let split = str.split(" "),
+    let split = str.split(' '),
       a = +split[0],
       op = split[1],
-      b = +split[2];
+      b = +split[2]
 
     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-      return NaN;
+      return NaN
     }
 
-    return this.methods[op](a, b);
-  };
+    return this.methods[op](a, b)
+  }
 
   this.addMethod = function (name, func) {
-    this.methods[name] = func;
-  };
+    this.methods[name] = func
+  }
 }
-const sum = new Calculator();
-const testAdd = sum.addMethod("/", (a, b) => a / b);
-const testCalc = sum.calculate("2 + 8");
+const sum = new Calculator()
+const testAdd = sum.addMethod('/', (a, b) => a / b)
+const testCalc = sum.calculate('2 + 8')
 // console.log(testCalc, testAdd);
 
 // let ask = (questions, yes, no) => {
@@ -97,9 +97,9 @@ const testCalc = sum.calculate("2 + 8");
 //   () => alert("вы отказались")
 // );
 
-let ollo = (a, b) => a + b;
+let ollo = (a, b) => a + b
 // alert(ollo(2, 2));
-let res = ollo(2, 4);
+let res = ollo(2, 4)
 
 // let vasya = { name: "Вася", age: 25 };
 // let petya = { name: "Петя", age: 30 };
@@ -109,17 +109,17 @@ let res = ollo(2, 4);
 
 // let namesArr = users.map((item) => item.name);
 // console.log(namesArr);
-let masha = { name: "Маша", surname: "Петрова", id: 3 };
-let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-let petia = { name: "Петыя", surname: "Лайме", id: 90 };
-let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: 'Маша', surname: 'Петрова', id: 3 }
+// let vasya = { name: 'Вася', surname: 'Пупкин', id: 1 }
+// let petia = { name: 'Петыя', surname: 'Лайме', id: 90 }
+// let petya = { name: 'Петя', surname: 'Иванов', id: 2 }
 
-let users = [vasya, petya, masha, petia];
+// let users = [vasya, petya, masha, petia]
 
-let usersMapped = users.map((item) => ({
-  fullName: `${item.name} ${item.surname}`,
-  id: item.id,
-}));
+// let usersMapped = users.map((item) => ({
+//   fullName: `${item.name} ${item.surname}`,
+//   id: item.id,
+// }))
 
 // console.log(usersMapped);
 
@@ -130,19 +130,46 @@ function sortByAge(users) {
   // if (a == b) return 0;
   // if (a < b) return -1;
 
-  users.sort((a, b) => (a.id > b.id ? 1 : -1));
+  users.sort((a, b) => (a.id > b.id ? 1 : -1))
 }
 
 // users.sort(users);
 
-sortByAge(users);
+// sortByAge(users)
 // console.log(users);
 // (a, b) => (a > b ? 1 : Math.random())
-let randomArr = [1, 3, 4, 5, 2];
+let randomArr = [1, 3, 4, 5, 2]
 
 let shuffle = (randomArr) => {
-  return randomArr.sort(() => Math.round(Math.random() * 100) - 50);
-};
+  return randomArr.sort(() => Math.round(Math.random() * 100) - 50)
+}
 
-shuffle(randomArr);
-console.log(randomArr);
+shuffle(randomArr)
+// console.log(randomArr)
+
+let vasyaa = { name: 'Вася', age: 25 }
+let petyaa = { name: 'Петя', age: 30 }
+let mashaa = { name: 'Маша', age: 29 }
+
+let averarr = [vasyaa, petyaa, mashaa]
+
+function getAverageAge(averarr) {
+  // const mapping = averarr.map((item) => item.age)
+  // const reducer = mapping.reduce(function (previousValue, item, index, array) {
+  //   return previousValue + item / mapping.length
+  // })
+  // console.log(reducer)
+  const red = averarr.reduce((prev, user) => prev + user.age, 0) / averarr.length
+  // console.log(red)
+  return red
+}
+
+getAverageAge(averarr)
+
+let strings = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', ':-O']
+function unique(strings) {
+  let res = strings.filter((x, i, a) => a.indexOf(x) === i)
+  console.log(res)
+}
+
+unique(strings)
