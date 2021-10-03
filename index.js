@@ -181,8 +181,8 @@ let arrSort = [1, 2, 15]
 let newArrSort = arrSort
 newArrSort.sort()
 
-console.log(arrSort) // 1, 15, 2ё
-console.log(newArrSort) // 1, 15, 2ё
+// console.log(arrSort) // 1, 15, 2ё
+// console.log(newArrSort) // 1, 15, 2ё
 
 // reverse  Переворачивает массив, первый елемент становится последним и тд . Вернет перевернутый массив. Но это будет старый массив, мы просто его изменили
 
@@ -265,3 +265,5 @@ let soldiers = userss.filter(army.canJoin, army)
 // arrow functions -
 // выкидываем слово function по-сути.
 //  после стрелки => у нас ретерн по-сути. Но если у нас многострочное выражение - пиши {} и юзай return
+
+alert('callback called')
