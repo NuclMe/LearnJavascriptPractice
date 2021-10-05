@@ -66,7 +66,9 @@ simpleMultiplication(16)
 // console.log(a.replace('a', 'k'))
 
 function replaceDots(str) {
-  str.replace(/./, '-')
+  // added the \ to escape special characters
+  // added the g so that replace is run for all occurences in the string
+  str.replace(/\./, '-')
 }
 
 replaceDots('one.two.three')
