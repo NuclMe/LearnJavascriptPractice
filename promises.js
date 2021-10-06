@@ -65,6 +65,7 @@ finally  - выполнение в любом случае
 // let a = 'a b'
 // console.log(a.replace('a', 'k'))
 
+<<<<<<< HEAD
 // function replaceDots(str) {
 //   str.replace(/./, '-')
 // }
@@ -237,6 +238,12 @@ function generateNumber(str) {
     if (isNaN(parsed)) reject('Not a number')
     else resolve(parsed)
   })
+=======
+function replaceDots(str) {
+  // added the \ to escape special characters
+  // added the g so that replace is run for all occurences in the string
+  str.replace(/\./, '-')
+>>>>>>> afc078f414f5c676abee6648aa9064686691fe12
 }
 function printNumber(str) {
   generateNumber(str)
