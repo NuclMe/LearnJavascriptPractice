@@ -65,195 +65,20 @@ finally  - выполнение в любом случае
 // let a = 'a b'
 // console.log(a.replace('a', 'k'))
 
-<<<<<<< HEAD
 // function replaceDots(str) {
-//   str.replace(/./, '-')
+//   // added the \ to escape special characters
+//   // added the g so that replace is run for all occurences in the string
+//   str.replace(/\./, '-')
+// }
+// function printNumber(str) {
+//   generateNumber(str)
+//     .then((value) => console.log(value))
+//     .catch((error) => console.log(error))
+//     .finally(() => console.log('End'))
 // }
 
-// replaceDots('one.two.three')
-
-// выполение промиса resolve аргумент
-// const myPromise = new Promise(function (resolve, reject) {
-//   console.log('Выполнение асинхронной операции')
-//   resolve('Все чекульбесно выполнено')
-//   reject('Переданы некорректные данные,иди ты')
-// })
-
-// myPromise.then(function onFulfilled(value) {
-//   console.log(`Из промиса получены данные ${value}`)
-// })
-
-//  вариация промисов
-// const x = 4
-// const y = 0
-
-// const myPromise = new Promise(function (resolve, reject) {
-//   if (y === 0) {
-//     reject('переданы некорректные данные')
-//   } else {
-//     const z = x / y
-//     resolve(z)
-//   }
-// })
-
-// ассинхронное вычесление результатов выполнения промиса
-// const x = 4
-// const y = 8
-// const myPromise = new Promise(function () {
-//   console.log('Выполнение асинхронной операции')
-//   const z = x + y
-//   console.log(`Результат операции: ${z}`)
-// })
-// myPromise.then()
-
-// const myPromise = Promise.resolve('Привет мир!')
-
-// myPromise.then((value) => console.log(value))
-
-// Обработка ошибок в Promise
-// catch выполняет то значение,которое передается в reject
-const myPromise = new Promise(function (resolve, reject) {
-  // console.log('Выполнение асинхронной операции')
-  // reject('Переданы некорректные данные')
-})
-
-myPromise.catch(function (error) {
-  console.log(error)
-})
-
-// try..catch
-
-/* Условия в  try  а что нужно делать если ерор возникнет то в catch 
-
-const myPromise = new Promise(function(resolve, reject){
-    try{
-        console.log("Выполнение асинхронной операции");
-        getSomeWork();      // вызов не существующей функции
-        resolve("Hello world!");
-    }
-    catch(err){
-        reject(`Произошла ошибка: ${err.message}`);
-    }
-});
-myPromise.catch( function(error){
-    console.log(error);
-});
-
-
-
-
-*/
-
-// Обработка ошибки с помощью функции then
-/* 
-then() - ее второй параметр представляет обработчик ошибки, который в качестве параметра получает переданное из функции reject значение:
-
-promise
-  .then(function(value){
-    // получение значения
-  },
-  function(error){
-    // обработка ошибки
-  });
-*/
-
-// обратока ошибок с помощью catch
-/*
-function generateNumber(str){
-    return new Promise((resolve, reject) => {
-        const parsed = parseInt(str);
-        if (isNaN(parsed)) reject("Not a number");
-        else resolve(parsed);
-    });
-};
-function printNumber(str){
-    generateNumber(str)
-        .then(value => console.log(value))
-        .catch(error => console.log(error)); 
-}
-printNumber("rty"); // Not a number
-printNumber("3");   // 3
-
-
-если parsed будет равен NaN тогда будет выполнять catch error если будет равен resolve в таком случае будет происходить просто console.log(value)
-*/
-// когда мы вызваем then то создается новый промис у которого будут свои resolve,reject соответственно мы можем при помощи такого способа создавать цепочки промисов. Можем выполнять несколько синхронных операций подряд, одна за другой
-
-// const helloPromise = new Promise(function (resolve) {
-//   resolve('Hello')
-// })
-
-// const worldPromise = helloPromise.then(function (value) {
-//   // возвращаем новое значение
-//   return value + ' World'
-// })
-// const metanitPromise = worldPromise.then(function (value) {
-//   // возвращаем новое значение
-//   return value + ' from METANIT.COM'
-// })
-// metanitPromise.then(function (finalValue) {
-//   // получаем финальное значение
-
-//   console.log(finalValue) // Hello World from METANIT.COM
-// })
-
-// Возвращаемое Promise из catch
-/*
-При этом стоит отметить, что, поскольку catch() возвращает объект Promise, то далее также можно продолжить цепочку:
-Причем метод then() после catch() будет вызываться, даже если не произошло ошибок и сам метод catch() не выполнялся.
-
-И мы даже можем из функции-обработчика ошибки в catch() также можем передавать некоторое значение и получать через последующий метод then():
-
-
-function generateNumber(str){
-    return new Promise((resolve, reject) => {
-        const parsed = parseInt(str);
-        if (isNaN(parsed)) reject("Not a number");
-        else resolve(parsed);
-    });
-};
-function printNumber(str){
-    generateNumber(str)
-        .then(value => value * value)
-        .then(value => console.log(`Result: ${value}`))
-        .catch(error => console.error(error))
-        .then(() => console.log("Work has been done"));
-}
-printNumber("3");   
-// Result: 9
-// Work has been done
-
-*/
-
-/* 
-Метод finally
-Кроме методов then() и catch() объект Promise для обработка результата также предоставляет метод finally(). Этот метод выполняется в конце цепочки промисов вне зависимости произошла ошибка или выполнение промиса прошло успешно.
-Метод finally() возвращает объект Promise, поэтому после него можно продолжить продолжить цепочку:
-
-*/
-
-function generateNumber(str) {
-  return new Promise((resolve, reject) => {
-    const parsed = parseInt(str)
-    if (isNaN(parsed)) reject('Not a number')
-    else resolve(parsed)
-  })
-=======
-function replaceDots(str) {
-  // added the \ to escape special characters
-  // added the g so that replace is run for all occurences in the string
-  str.replace(/\./, '-')
->>>>>>> afc078f414f5c676abee6648aa9064686691fe12
-}
-function printNumber(str) {
-  generateNumber(str)
-    .then((value) => console.log(value))
-    .catch((error) => console.log(error))
-    .finally(() => console.log('End'))
-}
-
-printNumber('3')
-printNumber('triuy')
+// printNumber('3')
+// printNumber('triuy')
 
 // Функции Promise.all, Promise.allSettled, Promise.any и Promise.race
 
@@ -309,24 +134,34 @@ printNumber('triuy')
 
 // С помощью свойства errors типа AggregateError можно получить в виде массива все ошибки, которые возникли в промисах:
 
-const promise1 = new Promise((resolve, reject) => {
-  reject('error in promise1')
-  setTimeout(resolve, 500, 'Hello')
-})
-const promise2 = new Promise((resolve, reject) => {
-  reject('error in promise2')
-  setTimeout(resolve, 1000, 'World')
-})
-Promise.any([promise1, promise2])
-  .then((value) => console.log(value))
-  .catch((e) => console.log(e.errors))
+// const promise1 = new Promise((resolve, reject) => {
+//   reject('error in promise1')
+//   setTimeout(resolve, 500, 'Hello')
+// })
+// const promise2 = new Promise((resolve, reject) => {
+//   reject('error in promise2')
+//   setTimeout(resolve, 1000, 'World')
+// })
+// Promise.any([promise1, promise2])
+//   .then((value) => console.log(value))
+//   .catch((e) => console.log(e.errors))
 
 // async/await
 
 // async ставится перед  ассинхроннной функцией в которой предпологается будет выполняться одна или несколько ассинхронных задач
 
-async function funcMane(num) {
-  ;(await 1) + num
-}
-funcName(1)
+// async function funcMane(num) {
+//   ;(await num) + num
+// }
+// funcName(1)
 // Оператор await приостанавливает выполнение асинхронной функции, пока объект Promise не возвратить результат.
+
+let s = ['bitcoin', 'take', 'over', 'the', 'world', 'maybe', 'who', 'knows', 'perhaps', 'aaa']
+function twoSort(s) {
+  let arr = s.sort().join()
+  arr.charCodeAt(0)
+  console.log(arr)
+  debugger
+}
+
+twoSort(s)
