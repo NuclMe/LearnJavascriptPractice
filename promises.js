@@ -158,10 +158,69 @@ finally  - выполнение в любом случае
 
 let s = ['bitcoin', 'take', 'over', 'the', 'world', 'maybe', 'who', 'knows', 'perhaps', 'aaa']
 function twoSort(s) {
-  let arr = s.sort().join()
-  arr.charCodeAt(0)
-  console.log(arr)
-  debugger
+  s.sort()
+  // console.log(s[0].split('').join('***'))
 }
 
+// умнее было бы в одну строчку с sort засунуть и перед этим return поставить
+//   return s.sort()[0].split('').join('***');
 twoSort(s)
+
+function isIsogram(str) {
+  // let arr = str.split(',')
+
+  // for (let idx in str) {
+  // let text = str.split(',')
+  let filteredArr =
+    str
+      .toLowerCase()
+      .split('')
+      .filter((element, index, array) => array.indexOf(element) == index).length == str.length
+  return filteredArr
+  // text.some(function (v, i, a) {
+  //   // debugger
+  //   let aoo = a.lastIndexOf(v) != i
+  //   console.log(aoo)
+  //   return aoo
+  // })
+  // debugger
+  // }
+  // for (i = 0; i < arr.length; i++) {
+  //   console.log(i)
+
+  // if (str.indexOf(arr[i]) < 0) {
+  // } else {
+  // }
+  // }
+}
+
+isIsogram('ab')
+
+// let promise = new Promise(function (resolve, reject) {
+//   setTimeout(() => resolve(1), 3000)
+//   debugger
+// })
+
+// promise.then(function (value) {
+//   console.log(`${value}`)
+// })
+
+let names = 'The quick brown fox jumps       over the lazy dog.'
+
+// let newNames = names.split('').reverse().join('')
+// function reverseWords(str) {
+//   let newNames = str.split('').reverse().join('').split('').reverse()
+//   console.log(newNames)
+//   return newNames
+// }
+// reverseWords(names)
+
+// let reversedStuff = function (str) {
+//   let newReversed = ''
+//   for (let i = str.length - 1; i > 0; i--) {
+//     newReversed += str[i]
+//   }
+//   return newReversed
+// }
+
+
