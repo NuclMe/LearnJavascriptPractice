@@ -156,12 +156,27 @@ finally  - выполнение в любом случае
 // funcName(1)
 // Оператор await приостанавливает выполнение асинхронной функции, пока объект Promise не возвратить результат.
 
-let s = ['bitcoin', 'take', 'over', 'the', 'world', 'maybe', 'who', 'knows', 'perhaps', 'aaa']
-function twoSort(s) {
-  let arr = s.sort().join()
-  arr.charCodeAt(0)
-  console.log(arr)
-  debugger
-}
+// let s = ['bitcoin', 'take', 'over', 'the', 'world', 'maybe', 'who', 'knows', 'perhaps', 'aaa']
+// function twoSort(s) {
+//   let arr = s.sort().join()
+//   arr.charCodeAt(0)
+//   console.log(arr)
+//   debugger
+// }
 
-twoSort(s)
+// twoSort(s)
+
+// let str = 'The quick brown fox jumps over the lazy dog'
+// let str = 'The quick brown     fox jumps over the lazy dog.'
+// let reverseWords = (str) => str.replace(/\S+/g, (word) => [...word].reverse().join(''))
+
+// let str = 'The quick brown fox jumps over    the lazy dog.'
+// function reverseWords(str) {
+//   return str.split('').reverse().join('').split(' ').reverse().join(' ')
+// }
+// reverseWords(str)
+let arr = [1, 4, 9, 16]
+var isSquare = function (arr) {
+  for (let i = 0; i < arr.length; i++) {}
+  //Your code here
+}
