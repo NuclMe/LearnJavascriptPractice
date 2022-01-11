@@ -33,9 +33,12 @@ function DisplayList(items, wrapper, rows_per_page, page) {
   wrapper.innerHTML = ''
   page--
 
-  let loop_start = rows_per_page * page
-  let paginatedItems = items.slice(loop_start, loop_start + rows_per_page)
-  console.log(paginatedItems)
-  for (let i = loop_start; i < loop_start + rows_per_page; i++) {}
+  let start = rows_per_page * page
+  let end = start + rows_per_page
+  let paginatedItems = items.slice(start, end)
+
+  for (let i = 0; i < paginatedItems.length; i++) {
+    console.log(items[i])
+  }
 }
 DisplayList(list_items, list_element, rows, current_page)
