@@ -38,7 +38,17 @@ function DisplayList(items, wrapper, rows_per_page, page) {
   let paginatedItems = items.slice(start, end)
 
   for (let i = 0; i < paginatedItems.length; i++) {
+    let item = paginatedItems[i]
+    let item_element = document.createElement('div')
+    item_element.classList.add('item')
+    item_element.innerText = item
+    wrapper.appendChild(item_element)
     console.log(items[i])
   }
 }
 DisplayList(list_items, list_element, rows, current_page)
+
+function setupPagination(item, wrapper, rows_per_page) {
+  wrapper.innerHTML = ''
+  let page_count = Math.ceil(item.length / rows_per_page)
+}
